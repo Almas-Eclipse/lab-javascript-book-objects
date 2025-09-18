@@ -143,19 +143,19 @@ const dictionary = {
   
 function booksByAuthor(dictionary) {
   const booksArray = [];
-  for (const author in dictionary) {
-    const authors = Object.keys(dictionary);
-    authors.forEach((author) => {
-      const books = dictionary[author];
+  const authors = Object.keys(dictionary);
+  authors.forEach((author) => {
+    const books = dictionary[author]; 
     books.forEach((book) => {
+      const [title, pages] = book; 
       booksArray.push({
-        title: book[0],
-        pages: book[1],
+        title: title,
+        pages: pages,
         author: author
       });
     });
-    });
-  }
+  });
+
   return booksArray;
 }
 
